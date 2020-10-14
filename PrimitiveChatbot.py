@@ -24,7 +24,7 @@ testDF = pd.read_csv('test_data.csv')
 testDF['prognosis'] = testDF['prognosis'].map(dis_dict)
 test_x = testDF.drop(columns='prognosis')
 test_y = testDF['prognosis']
-
+print(type(test_x))
 test_predDTC = DTC.predict(test_x)
 test_predRFC = RFC.predict(test_x)
 
