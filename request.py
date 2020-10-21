@@ -14,5 +14,15 @@ for i in df.columns:
     # else:
     #     input_symptoms[i] = 0
 #print(input_symptoms)
-r = requests.post(url,json=json.dumps(input_symptoms))
-print(r.json())
+#r = requests.post(url,json=json.dumps(input_symptoms))
+jsondict = {'symptoms':input_symptoms}
+print(input_symptoms)
+print(json.dumps(jsondict))
+print(type(json.dumps(jsondict)))
+test_x = pd.read_json(json.dumps([input_symptoms]))
+print(test_x)
+test_x.drop(columns=['prognosis','Unnamed: 133'],axis=1,inplace = True)
+print(test_x)
+#print(test_x['symptoms'])
+# r = requests.post(url,json={json.dumps(input_symptoms)})
+#print(r.json())
