@@ -1,0 +1,13 @@
+<html>
+    <body>
+         
+        <form method="post" action="/">
+                {%for i in variable%}
+                    <input type="checkbox" name="options" value=i> {{i}} </input><br>
+                {%endfor%}
+        </form>
+        <form action="/predicted">
+            <input type="submit" value="Diagnose" />
+        </form>
+    </body>
+</html>
